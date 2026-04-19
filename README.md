@@ -1,10 +1,10 @@
-\# 📶 WiFi Follow-Me \& Signal Tracking UAV
+﻿\# ðŸ“¶ WiFi Follow-Me \& Signal Tracking UAV
 
 \*\*RSSI-Based Autonomous Tracking with Safety-Critical LiDAR Failsafes\*\*
 
 
 
-\### 🛠️ Implementation Diagram
+\### ðŸ› ï¸ Implementation Diagram
 
 ```mermaid
 
