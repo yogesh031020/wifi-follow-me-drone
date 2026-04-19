@@ -10,11 +10,11 @@
 
 graph TD
 
-&#x20;   Target\[WiFi Target] ---|RSSI| ESP32\[ESP32 Brain]
+    Target\[WiFi Target] ---|RSSI| ESP32\[ESP32 Brain]
 
-&#x20;   LiDAR\[TF-Mini LiDAR] -->|Distance| ESP32
+    LiDAR\[TF-Mini LiDAR] -->|Distance| ESP32
 
-&#x20;   ESP32 -->|MAVLink Hijack| APM\[APM 2.8 FC]
+    ESP32 -->|MAVLink Hijack| APM\[APM 2.8 FC]
 
 
 
