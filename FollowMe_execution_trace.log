@@ -1,0 +1,39 @@
+[BOOT] ESP32-WROOM-32 Init...
+[BOOT] CPU Frequency: 240 MHz
+[WIFI] Initializing WiFi in Station Mode...
+[WIFI] Searching for Target AP: "your-phone-hotspot"
+[MAVLink] Connecting to APM 2.8 via Serial2 at 57600 baud...
+[MAVLink] Heartbeat received! APM 2.8 (ArduCopter V3.2.1)
+[SENSOR] Initializing TF-Mini LiDAR (Serial1)... OK.
+[WEB] Starting live dashboard on port 80... OK (http://follow-me-drone.local)
+
+[TRACKER] Target AP found. Channel: 6.
+[TRACKER] Initial RSSI: -85 dBm
+[TRACKER] Applied Kalman Filter. Smoothed RSSI: -83.2 dBm
+[MAVLink] Vehicle is in STABILIZE mode. Arm state: ARMED.
+[MAVLink] Tracking active...
+
+[NAV] RSSI: -82.1 dBm (Weak - Target is far)
+[MAVLink] Sending RC Override: Pitch = 1700 (Moving Forward)
+[SENSOR] TF-Mini: 5.2m
+[NAV] RSSI: -70.5 dBm
+[MAVLink] Sending RC Override: Pitch = 1600 (Slowing)
+
+[NAV] RSSI: -56.2 dBm (In Deadzone: -55.0 dBm ± 5)
+[MAVLink] Sending RC Override: Pitch = 1500 (Holding Position)
+[SENSOR] TF-Mini: 2.1m
+
+[NAV] RSSI: -42.0 dBm (Strong - Target is too close)
+[MAVLink] Sending RC Override: Pitch = 1300 (Moving Backward)
+[SENSOR] TF-Mini: 1.5m
+
+[WARN] TF-Mini: 0.75m! (OBSTACLE_CLOSE_CM trigger)
+[AVOID] Emergency Brake Engaged!
+[MAVLink] Sending RC Override: Pitch = 1200 (Hard Reverse)
+[SENSOR] TF-Mini: 1.2m
+[AVOID] Distance safe. Resuming tracking.
+
+[NAV] RSSI: -54.1 dBm (In Deadzone)
+[MAVLink] Sending RC Override: Pitch = 1500 (Holding Position)
+[WEB] Client disconnected.
+[MAVLink] APM 2.8 Disarmed. Tracking Paused.
