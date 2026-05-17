@@ -37,6 +37,8 @@ The ESP32 runs a small Flask-style web server on port 80. Visit `http://follow-m
 | TF-Mini LiDAR | Forward obstacle detection |
 | Target WiFi AP | The device being followed |
 
+Wifi-follow-me-drone.jpg
+
 ## Configuration
 
 Edit `config.h` before flashing:
