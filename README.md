@@ -38,7 +38,7 @@ The ESP32 runs a small Flask-style web server on port 80. Visit `http://follow-m
 | Target WiFi AP | The device being followed |
 
 ## Hardware Showcase
-![WiFi Follow-Me Drone](your-image-filename.jpg)
+![WiFi Follow-Me Drone](Wifi-follow-me-drone.jpg)
 
 
 ## Configuration
