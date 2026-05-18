@@ -89,7 +89,46 @@ Edit default tolerances inside `config.h` before flashing:
 
 ---
 
+---
+
+## 🛠️ Step-by-Step "How to Run" & Deployment Guide
+
+Follow these steps to deploy the ESP32 companion code and configure the follow-me autopilot link:
+
+### 1. Arduino IDE Setup
+1. Download and install [Arduino IDE](https://www.arduino.cc/en/software).
+2. Go to **File ➔ Preferences ➔ Additional Boards Manager URLs** and add the Espressif ESP32 package URL:
+   `https://dl.espressif.com/dl/package_esp32_index.json`
+3. Go to **Tools ➔ Board ➔ Boards Manager**, search for `esp32` by Espressif, and install the library.
+
+### 2. Configure Firmware
+1. Open `wifi_follow_me.ino` in the Arduino IDE. All associated headers (`config.h`, `lidar.h`, `mavlink_comm.h`, `wifi_tracking.h`) will open automatically as tabs.
+2. Open `config.h` and configure your target target SSID and calibration offsets:
+   ```cpp
+   #define TRACK_SSID "YOUR_TARGET_HOTSPOT"
+   #define FOLLOW_TARGET_RSSI  -55.0  // dBm tracking threshold
+   ```
+3. Connect your **ESP32 DevKit** board to your workstation using a high-quality micro-USB cable.
+4. Select your board (**Tools ➔ Board ➔ ESP32 Dev Module**) and select the corresponding active **COM Port**.
+5. Click the **Upload** button (arrow icon) to compile and flash the firmware.
+
+### 3. Physical Installation & Connections
+1. Wire the **TF-Mini LiDAR** to the ESP32's hardware serial pins (`GPIO 16` RX1 and `GPIO 17` TX1).
+2. Connect the **APM 2.8 Telemetry (Serial2) port** to the ESP32's `RX2 (GPIO 16)` and `TX2 (GPIO 17)` lines using a **Bi-Directional Logic Level Shifter** (APM runs 5V; ESP32 runs 3.3V).
+3. Power the ESP32 using a dedicated clean **5V 3A UBEC** connected to the `VIN` or `5V` pin (never use APM power rails).
+4. Power your tracking device's WiFi Access Point (e.g., enable your smartphone's portable hotspot with the configured SSID).
+
+### 4. Flight Execution Sequence
+1. Power up the drone. The ESP32 status LED will flash as it initiates the WiFi RSSI Kalman-filtered sniffing loop.
+2. Turn on your transmitter. Manual control is fully available.
+3. Switch the drone to **ALT_HOLD** or **GUIDED** mode, and manually **ARM** the motors.
+4. Once armed, turn off manual pitch overrides or flick your designated companion toggle switch. The ESP32 will take over, streaming MAVLink command packets over the UART line to maintain distance tracking!
+5. Open your phone browser and go to `http://follow-me-drone.local` to view the live RSSI telemetry dashboard.
+
+---
+
 ## 📂 Repository Directory Layout
+
 ```directory
 wifi-follow-me-drone/
 ├── config.h               # Core threshold, SSID, and calibration macros
